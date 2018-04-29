@@ -1,21 +1,22 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, {Component} from 'react'
+import {Text} from 'react-native';
+import PropTypes from 'prop-types'
 
-class Bananas extends React.Component {
+class Bananas extends Component {
+
+    static propTypes = {
+        name: PropTypes.string,
+    };
+
+    static defaultProps = {
+        name: 'undefined name'
+    };
+
     render() {
         return (
-                <Text>Super edu</Text>
+            <Text>BANANA {this.props.name}</Text>
         );
     }
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-});
 
 module.exports = Bananas;
